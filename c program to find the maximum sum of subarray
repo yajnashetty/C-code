@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100]  ;
+     int n ;
+    printf("enter the size of the array: ");
+    scanf("%d",&n);
+    printf("\nenter the elements of array");
+    for(int i = 0; i<n; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("the array elemts are:");
+    for(int i = 0; i<n; i++)
+    {
+        printf("%d\t",arr[i]);
+    }
+    int sum1 ,max;
+    int sum[n];
+    for(int i = 0; i<n-1; i++)
+    {   sum1 = 0;
+        for(int j = i; j<i+3; j++)
+        {
+            sum1 = sum1+arr[j];
+            sum[i] = sum1;
+        }
+        printf("\t%d",sum1);
+    }
+    max = sum[0];
+    for (int i = 0; i<n-1; i++)
+    {
+        if (sum[i]<sum[i+1])
+        {
+            max = sum[i+1];
+        }
+    }
+    printf("\nmax = %d",max);
+    return 0;
+}
